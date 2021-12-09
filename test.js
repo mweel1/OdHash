@@ -1,10 +1,10 @@
-const { getPatientHash, getApptHash, getSplitHash } = require("./lib.js");
+const { getPatientHash, getApptHash, getSplitHash } = require("./index.js");
 
 var assert = require("assert");
 
 describe("Hash Tests", () => {
   describe("Check Patient Hash", () => {
-    it("should return the same has as the db", () => {
+    it("should return the same as the db", () => {
       assert.equal(
         getPatientHash("21", "", "", "hashman@aol.com"),
         "mlGAYllHS0F/2laQtJemY1kkUeJHc1Z3SEeuVM0OIDE="
@@ -13,7 +13,7 @@ describe("Hash Tests", () => {
   });
 
   describe("Check Appointment Hash", () => {
-    it("should return the same has as the db", () => {
+    it("should return the same as the db", () => {
       assert.equal(
         getApptHash(1, 21, "2021-12-08 09:00:00"),
         "Q/yxow81LjGnXd8NmteMUdfQyqOJCp93ZnPvLS/mzeA="
@@ -32,7 +32,7 @@ describe("Hash Tests", () => {
   });
 
   describe("Check Pay Split Hash", () => {
-    it("should return the same has as the db", function () {
+    it("should return the same as the db", function () {
       assert.equal(
         getSplitHash(54, 34, "2021-12-08"),
         "dmwhKExsA0GylTnPEa3lXK51ZKD0yYBbLidvGua4EdY="
